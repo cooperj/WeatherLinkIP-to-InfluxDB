@@ -5,9 +5,9 @@ import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
 
 # Get properties from the .env file
-token = os.environ.get("INFLUXDB_TOKEN")
-org = os.environ.get("INFLUXDB_ORG")
-url = os.environ.get("INFLUXDB_URL")
+token = os.environ['INFLUXDB_TOKEN']
+org = os.environ['INFLUXDB_ORG']
+url = str(os.environ['INFLUXDB_URL'])
 
 influxClient = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
 

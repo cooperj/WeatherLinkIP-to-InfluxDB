@@ -118,7 +118,7 @@ class LoopPacket:
         icons = {2: "Cloud", 3: "Cloud + Rain", 6: "Partial Sun + Cloud", 7: "Partial Sun + Cloud + Rain", 
             8: "Sun", 18: "Partial Sun + Cloud + Rain", 19: "Cloud + Rain + Snow", 22: "Partial Sun + Cloud + Snow", 
             23: "Partial Sun + Cloud + Rain + Snow"}
-        self.forecast_icons = icons[icon]
+        self.forecast_icons = icons[icon] or "Unknown"
         self.forecast_rule = struct.unpack('c', raw_data[91:92])[0]
         self.sunrise = struct.unpack('h', raw_data[92:94])[0]
         self.sunset = struct.unpack('h', raw_data[94:96])[0]
